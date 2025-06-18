@@ -9,6 +9,10 @@ const app = express();
 const PORT = ENV.PORT || 3000;
 app.use(express.json());
 
+app.get("/home", (req, res) => {
+  res.send("Welcome to the Recipe API!");
+});
+
 app.get("/api/favorites/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
